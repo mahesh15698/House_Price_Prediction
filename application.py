@@ -5,7 +5,6 @@ import sys
 application = Flask(__name__)
 app = application
 
-
 @app.route("/", methods=['GET','POST'])
 def index():
     try:
