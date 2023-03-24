@@ -1,7 +1,6 @@
 # House_Price_Prediction
 This is House Price Prediction
-Application url:
-[HousingPredictor](https://ml-regression-app.herokuapp.com/)
+
 
 ## Start Machine Learning project.
 
