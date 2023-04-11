@@ -1,5 +1,5 @@
 from Housing.entity.config_entitiy import DataIngestionConfig
-import sys,os
+import sys, os
 from Housing.exception import HousingException
 from Housing.logger import logging
 from Housing.entity.artifact_entity import DataIngestionArtifact
@@ -7,8 +7,9 @@ import tarfile
 import numpy as np
 from six.moves import urllib
 import pandas as pd
-# from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.model_selection import StratifiedShuffleSplit
+
+
 class DataIngestion:
 
     def __init__(self,data_ingestion_config:DataIngestionConfig ):

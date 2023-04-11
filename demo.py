@@ -14,8 +14,9 @@ def main():
         #pipeline.run_pipeline()
         # pipeline.start()
         # logging.info("main function execution completed.")
-        # # data_validation_config = Configuartion().get_data_transformation_config()
-        # # print(data_validation_config)
+        ##data_validation_config = Configuartion().get_data_transformation_config()
+        # data_validation_config = Configuration().get_data_validation_config()
+        # print(data_validation_config)
         # schema_file_path=r"D:\Project\machine_learning_project\config\schema.yaml"
         # file_path=r"D:\Project\machine_learning_project\housing\artifact\data_ingestion\2022-06-27-19-13-17\ingested_data\train\housing.csv"
 

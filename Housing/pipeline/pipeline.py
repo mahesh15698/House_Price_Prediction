@@ -26,20 +26,6 @@ import os, sys
 #                                        "running_status", "start_time", "stop_time", "execution_time", "message",
 #                                        "experiment_file_path", "accuracy", "is_model_accepted"])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Pipeline:
     # experiment: Experiment = Experiment(*([None] * 11))
     # experiment_file_path = None
