@@ -2,6 +2,8 @@ numpy
 flask
 gunicorn
 sklearn
+scikit-learn
 pandas
 -e .
 PyYAML
+evidently 
