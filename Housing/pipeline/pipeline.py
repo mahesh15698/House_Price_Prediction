@@ -6,11 +6,12 @@ from Housing.exception import HousingException
 
 # from multiprocessing import Process
 
-from Housing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
+from Housing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact
 # from Housing.entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
 from Housing.entity.config_entitiy import DataIngestionConfig
 from Housing.component.data_ingestion import DataIngestion
 from Housing.component.data_validation import DataValidation
+from Housing.component.data_transformation import DataTransformation
 # 
 # from housing.component.data_validation import DataValidation
 
@@ -56,12 +57,28 @@ class Pipeline:
             return data_validation.initiate_data_validation()
         except Exception as e:
             raise HousingException(e, sys) from e
+    def start_data_transformation(self,
+                                  data_ingestion_artifact: DataIngestionArtifact,
+                                  data_validation_artifact: DataValidationArtifact
+                                  ) -> DataTransformationArtifact:
+        try:
+            data_transformation = DataTransformation(
+                data_transformation_config=self.config.get_data_transformation_config(),
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact
+            )
+            return data_transformation.initiate_data_transformation()
+        except Exception as e:
+            raise HousingException(e, sys)
         
 
     def run_pipeline(self):
         try:
             data_ingestion_artifact =self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
+            data_transformation_artifact= self.start_data_transformation(
+                data_ingestion_artifact=data_ingestion_artifact,
+                data_validation_artifact=data_validation_artifact)
         except Exception as e:
             raise HousingException(e, sys) from e       
 

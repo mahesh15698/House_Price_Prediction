@@ -2,7 +2,7 @@ from Housing.pipeline.pipeline import Pipeline
 from Housing.exception import HousingException
 from Housing.logger import logging
 from Housing.config.configuration import Configuration
-#from Housing.component.data_transformation import Datatr
+# from Housing.component.data_transformation import datatrr
 import os
 
 def main():
@@ -14,7 +14,8 @@ def main():
         #pipeline.run_pipeline()
         # pipeline.start()
         # logging.info("main function execution completed.")
-        ##data_validation_config = Configuartion().get_data_transformation_config()
+        # data_transformation_config = Configuration().get_data_transformation_config()
+        # print(data_transformation_config)
         # data_validation_config = Configuration().get_data_validation_config()
         # print(data_validation_config)
         # schema_file_path=r"D:\Project\machine_learning_project\config\schema.yaml"
